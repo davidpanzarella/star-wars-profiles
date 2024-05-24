@@ -1,0 +1,21 @@
+#if($ctx.error)
+  $utils.error($ctx.error.message, $ctx.error.type)
+#else
+  #if($ctx.result)
+    {
+      "id": "$ctx.result.id.S",
+      "name": "$ctx.result.name.S",
+      "height": "$ctx.result.height.S",
+      "mass": "$ctx.result.mass.S",
+      "hair_color": "$ctx.result.hair_color.S",
+      "skin_color": "$ctx.result.skin_color.S",
+      "eye_color": "$ctx.result.eye_color.S",
+      "birth_year": "$ctx.result.birth_year.S",
+      "gender": "$ctx.result.gender.S",
+      "homeworld": "$ctx.result.homeworld.S",
+      "species": "$ctx.result.species.S"
+    }
+  #else
+    $utils.error("Person not found", "NotFound")
+  #end
+#end

@@ -1,0 +1,19 @@
+{
+  "version": "2017-02-28",
+  "operation": "PutItem",
+  "key": {
+    "id": { "S": "$ctx.args.id" }
+  },
+  "attributeValues": {
+    "name": { "S": "$ctx.args.name" },
+    "height": { "S": "$ctx.args.height" },
+    "mass": { "S": "$ctx.args.mass" },
+    "hair_color": { "S": "$ctx.args.hair_color" },
+    "skin_color": { "S": "$ctx.args.skin_color" },
+    "eye_color": { "S": "$ctx.args.eye_color" },
+    "birth_year": { "S": "$ctx.args.birth_year" },
+    "gender": { "S": "$ctx.args.gender" },
+    "homeworld": { "S": "$ctx.args.homeworld" },
+    "species": { "S": "$ctx.args.species" }
+  }
+}

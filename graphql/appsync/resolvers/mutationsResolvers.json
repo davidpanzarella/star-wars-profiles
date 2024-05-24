@@ -1,0 +1,26 @@
+{
+  "version": "2017-02-28",
+  "resolvers": [
+    {
+      "typeName": "Mutation",
+      "fieldName": "createPerson",
+      "dataSource": "PeopleTable",
+      "requestMappingTemplate": "mapping-templates/Person/createPerson-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Person/createPerson-response.vtl"
+    },
+    {
+      "typeName": "Mutation",
+      "fieldName": "createFilm",
+      "dataSource": "FilmsTable",
+      "requestMappingTemplate": "mapping-templates/Film/createFilm-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Film/createFilm-response.vtl"
+    },
+    {
+      "typeName": "Mutation",
+      "fieldName": "createStarship",
+      "dataSource": "StarshipsTable",
+      "requestMappingTemplate": "mapping-templates/Starship/createStarship-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Starship/createStarship-response.vtl"
+    }
+  ]
+}

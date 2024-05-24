@@ -1,0 +1,47 @@
+{
+  "version": "2017-02-28",
+  "resolvers": [
+    {
+      "typeName": "Query",
+      "fieldName": "getPerson",
+      "dataSource": "PeopleTable",
+      "requestMappingTemplate": "mapping-templates/Person/getPerson-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Person/getPerson-response.vtl"
+    },
+    {
+      "typeName": "Query",
+      "fieldName": "listPeople",
+      "dataSource": "PeopleTable",
+      "requestMappingTemplate": "mapping-templates/Person/listPeople-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Person/listPeople-response.vtl"
+    },
+    {
+      "typeName": "Query",
+      "fieldName": "getFilm",
+      "dataSource": "FilmsTable",
+      "requestMappingTemplate": "mapping-templates/Film/getFilm-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Film/getFilm-response.vtl"
+    },
+    {
+      "typeName": "Query",
+      "fieldName": "listFilms",
+      "dataSource": "FilmsTable",
+      "requestMappingTemplate": "mapping-templates/Film/listFilms-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Film/listFilms-response.vtl"
+    },
+    {
+      "typeName": "Query",
+      "fieldName": "getStarship",
+      "dataSource": "StarshipsTable",
+      "requestMappingTemplate": "mapping-templates/Starship/getStarship-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Starship/getStarship-response.vtl"
+    },
+    {
+      "typeName": "Query",
+      "fieldName": "listStarships",
+      "dataSource": "StarshipsTable",
+      "requestMappingTemplate": "mapping-templates/Starship/listStarships-request.vtl",
+      "responseMappingTemplate": "mapping-templates/Starship/listStarships-response.vtl"
+    }
+  ]
+}

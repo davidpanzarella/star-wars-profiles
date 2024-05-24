@@ -1,0 +1,17 @@
+#if($ctx.error)
+  $utils.error($ctx.error.message, $ctx.error.type)
+#else
+  #if($ctx.result)
+    {
+      "id": "$ctx.result.id.S",
+      "title": "$ctx.result.title.S",
+      "episode_id": "$ctx.result.episode_id.N",
+      "opening_crawl": "$ctx.result.opening_crawl.S",
+      "director": "$ctx.result.director.S",
+      "producer": "$ctx.result.producer.S",
+      "release_date": "$ctx.result.release_date.S"
+    }
+  #else
+    $utils.error("Film not found", "NotFound")
+  #end
+#end

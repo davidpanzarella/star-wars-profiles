@@ -1,0 +1,22 @@
+{
+  "version": "2017-02-28",
+  "operation": "PutItem",
+  "key": {
+    "id": { "S": "$ctx.args.id" }
+  },
+  "attributeValues": {
+    "name": { "S": "$ctx.args.name" },
+    "model": { "S": "$ctx.args.model" },
+    "manufacturer": { "S": "$ctx.args.manufacturer" },
+    "cost_in_credits": { "S": "$ctx.args.cost_in_credits" },
+    "length": { "S": "$ctx.args.length" },
+    "max_atmosphering_speed": { "S": "$ctx.args.max_atmosphering_speed" },
+    "crew": { "S": "$ctx.args.crew" },
+    "passengers": { "S": "$ctx.args.passengers" },
+    "cargo_capacity": { "S": "$ctx.args.cargo_capacity" },
+    "consumables": { "S": "$ctx.args.consumables" },
+    "hyperdrive_rating": { "S": "$ctx.args.hyperdrive_rating" },
+    "MGLT": { "S": "$ctx.args.MGLT" },
+    "starship_class": { "S": "$ctx.args.starship_class" }
+  }
+}

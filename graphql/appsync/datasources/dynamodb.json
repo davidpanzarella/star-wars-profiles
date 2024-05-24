@@ -1,0 +1,51 @@
+// Update this file to create the data sources for the AppSync API
+{
+  "version": "2017-02-28",
+  "dataSources": [
+    {
+      "type": "AMAZON_DYNAMODB",
+      "name": "PeopleTable",
+      "config": {
+        "tableName": "People",
+        "awsRegion": "us-east-1" // <-- update
+      },
+      "serviceRoleArn": "arn:aws:iam::123456789012:role/service-role/AppSyncServiceRole" // <-- update
+    },
+    {
+      "type": "AMAZON_DYNAMODB",
+      "name": "FilmsTable",
+      "config": {
+        "tableName": "Films",
+        "awsRegion": "us-east-1" // <-- update
+      },
+      "serviceRoleArn": "arn:aws:iam::123456789012:role/service-role/AppSyncServiceRole" // <-- update
+    },
+    {
+      "type": "AMAZON_DYNAMODB",
+      "name": "StarshipsTable",
+      "config": {
+        "tableName": "Starships",
+        "awsRegion": "us-east-1" // <-- update
+      },
+      "serviceRoleArn": "arn:aws:iam::123456789012:role/service-role/AppSyncServiceRole" // <-- update
+    },
+    {
+      "type": "AMAZON_DYNAMODB",
+      "name": "PeopleFilmsTable",
+      "config": {
+        "tableName": "PeopleFilms",
+        "awsRegion": "us-east-1" // <-- update
+      },
+      "serviceRoleArn": "arn:aws:iam::123456789012:role/service-role/AppSyncServiceRole" // <-- update
+    },
+    {
+      "type": "AMAZON_DYNAMODB",
+      "name": "PeopleStarshipsTable",
+      "config": {
+        "tableName": "PeopleStarships",
+        "awsRegion": "us-east-1" // <-- update
+      },
+      "serviceRoleArn": "arn:aws:iam::123456789012:role/service-role/AppSyncServiceRole" // <-- update
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+#if($ctx.error)
+  $utils.error($ctx.error.message, $ctx.error.type)
+#else
+  #if($ctx.result.items.size() > 0)
+    [
+    #foreach($item in $ctx.result.items)
+      {
+        "id": "$item.id.S",
+        "name": "$item.name.S",
+        "model": "$item.model.S",
+        "manufacturer": "$item.manufacturer.S",
+        "cost_in_credits": "$item.cost_in_credits.S",
+        "length": "$item.length.S",
+        "max_atmosphering_speed": "$item.max_atmosphering_speed.S",
+        "crew": "$item.crew.S",
+        "passengers": "$item.passengers.S",
+        "cargo_capacity": "$item.cargo_capacity.S",
+        "consumables": "$item.consumables.S",
+        "hyperdrive_rating": "$item.hyperdrive_rating.S",
+        "MGLT": "$item.MGLT.S",
+        "starship_class": "$item.starship_class.S"
+      }#if($foreach.hasNext),#end
+    #end
+    ]
+  #else
+    []
+  #end
+#end

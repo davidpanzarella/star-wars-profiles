@@ -1,0 +1,103 @@
+type Person {
+  id: ID!
+  name: String!
+  height: String
+  mass: String
+  hair_color: String
+  skin_color: String
+  eye_color: String
+  birth_year: String
+  gender: String
+  homeworld: String
+  species: String
+  films: [Film] @connection(keyName: "byPerson", fields: ["id"])
+  starships: [Starship] @connection(keyName: "byPerson", fields: ["id"])
+}
+
+type Film {
+  id: ID!
+  title: String!
+  episode_id: Int
+  opening_crawl: String
+  director: String
+  producer: String
+  release_date: String
+  characters: [Person] @connection(keyName: "byFilm", fields: ["id"])
+}
+
+type Starship {
+  id: ID!
+  name: String!
+  model: String
+  manufacturer: String
+  cost_in_credits: String
+  length: String
+  max_atmosphering_speed: String
+  crew: String
+  passengers: String
+  cargo_capacity: String
+  consumables: String
+  hyperdrive_rating: String
+  MGLT: String
+  starship_class: String
+  pilots: [Person] @connection(keyName: "byStarship", fields: ["id"])
+}
+
+type Query {
+  getPerson(id: ID!): Person
+  listPeople: [Person]
+  
+  getFilm(id: ID!): Film
+  listFilms: [Film]
+  
+  getStarship(id: ID!): Starship
+  listStarships: [Starship]
+}
+
+type Mutation {
+  createPerson(
+    id: ID!
+    name: String!
+    height: String
+    mass: String
+    hair_color: String
+    skin_color: String
+    eye_color: String
+    birth_year: String
+    gender: String
+    homeworld: String
+    species: String
+  ): Person
+
+  createFilm(
+    id: ID!
+    title: String!
+    episode_id: Int
+    opening_crawl: String
+    director: String
+    producer: String
+    release_date: String
+  ): Film
+
+  createStarship(
+    id: ID!
+    name: String!
+    model: String
+    manufacturer: String
+    cost_in_credits: String
+    length: String
+    max_atmosphering_speed: String
+    crew: String
+    passengers: String
+    cargo_capacity: String
+    consumables: String
+    hyperdrive_rating: String
+    MGLT: String
+    starship_class: String
+  ): Starship
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

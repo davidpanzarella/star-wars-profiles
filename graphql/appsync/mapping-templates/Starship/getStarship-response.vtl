@@ -1,0 +1,24 @@
+#if($ctx.error)
+  $utils.error($ctx.error.message, $ctx.error.type)
+#else
+  #if($ctx.result)
+    {
+      "id": "$ctx.result.id.S",
+      "name": "$ctx.result.name.S",
+      "model": "$ctx.result.model.S",
+      "manufacturer": "$ctx.result.manufacturer.S",
+      "cost_in_credits": "$ctx.result.cost_in_credits.S",
+      "length": "$ctx.result.length.S",
+      "max_atmosphering_speed": "$ctx.result.max_atmosphering_speed.S",
+      "crew": "$ctx.result.crew.S",
+      "passengers": "$ctx.result.passengers.S",
+      "cargo_capacity": "$ctx.result.cargo_capacity.S",
+      "consumables": "$ctx.result.consumables.S",
+      "hyperdrive_rating": "$ctx.result.hyperdrive_rating.S",
+      "MGLT": "$ctx.result.MGLT.S",
+      "starship_class": "$ctx.result.starship_class.S"
+    }
+  #else
+    $utils.error("Starship not found", "NotFound")
+  #end
+#end

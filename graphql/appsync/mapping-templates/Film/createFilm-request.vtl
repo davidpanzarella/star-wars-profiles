@@ -1,0 +1,15 @@
+{
+  "version": "2017-02-28",
+  "operation": "PutItem",
+  "key": {
+    "id": { "S": "$ctx.args.id" }
+  },
+  "attributeValues": {
+    "title": { "S": "$ctx.args.title" },
+    "episode_id": { "N": "$ctx.args.episode_id" },
+    "opening_crawl": { "S": "$ctx.args.opening_crawl" },
+    "director": { "S": "$ctx.args.director" },
+    "producer": { "S": "$ctx.args.producer" },
+    "release_date": { "S": "$ctx.args.release_date" }
+  }
+}

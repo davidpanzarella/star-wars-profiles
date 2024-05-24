@@ -1,0 +1,90 @@
+// Set up dynamodb tables for People, Films, Starships, PeopleFilms, and PeopleStarships
+// PeopleFilms and PeopleStarships are many-to-many relationships between People and Films, and People and Starships, respectively
+// PeopleFilms and PeopleStarships are set up with a GSI to allow for querying by the secondary key (film_id or starship_id) as the primary key
+{
+  "People": {
+    "TableName": "People",
+    "AttributeDefinitions": [{ "AttributeName": "id", "AttributeType": "S" }],
+    "KeySchema": [{ "AttributeName": "id", "KeyType": "HASH" }],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  },
+  "Films": {
+    "TableName": "Films",
+    "AttributeDefinitions": [{ "AttributeName": "id", "AttributeType": "S" }],
+    "KeySchema": [{ "AttributeName": "id", "KeyType": "HASH" }],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  },
+  "Starships": {
+    "TableName": "Starships",
+    "AttributeDefinitions": [{ "AttributeName": "id", "AttributeType": "S" }],
+    "KeySchema": [{ "AttributeName": "id", "KeyType": "HASH" }],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  },
+  "PeopleFilms": {
+    "TableName": "PeopleFilms",
+    "AttributeDefinitions": [
+      { "AttributeName": "person_id", "AttributeType": "S" },
+      { "AttributeName": "film_id", "AttributeType": "S" }
+    ],
+    "KeySchema": [
+      { "AttributeName": "person_id", "KeyType": "HASH" },
+      { "AttributeName": "film_id", "KeyType": "RANGE" }
+    ],
+    "GlobalSecondaryIndexes": [
+      {
+        "IndexName": "film_id-person_id-index",
+        "KeySchema": [
+          { "AttributeName": "film_id", "KeyType": "HASH" },
+          { "AttributeName": "person_id", "KeyType": "RANGE" }
+        ],
+        "Projection": { "ProjectionType": "ALL" },
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        }
+      }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  },
+  "PeopleStarships": {
+    "TableName": "PeopleStarships",
+    "AttributeDefinitions": [
+      { "AttributeName": "person_id", "AttributeType": "S" },
+      { "AttributeName": "starship_id", "AttributeType": "S" }
+    ],
+    "KeySchema": [
+      { "AttributeName": "person_id", "KeyType": "HASH" },
+      { "AttributeName": "starship_id", "KeyType": "RANGE" }
+    ],
+    "GlobalSecondaryIndexes": [
+      {
+        "IndexName": "starship_id-person_id-index",
+        "KeySchema": [
+          { "AttributeName": "starship_id", "KeyType": "HASH" },
+          { "AttributeName": "person_id", "KeyType": "RANGE" }
+        ],
+        "Projection": { "ProjectionType": "ALL" },
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        }
+      }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  }
+}
