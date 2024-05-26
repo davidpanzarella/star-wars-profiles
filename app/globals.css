@@ -18,6 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: var(--font-inter), sans-serif;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -30,4 +31,13 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-inter), sans-serif;
 }
