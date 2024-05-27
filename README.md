@@ -1,6 +1,6 @@
 # Star Wars Profiles
 
-This repository is a React application that allows you to search profiles of Star Wars characters. It utilizes Next.js, MSW for mocking API requests, and Vitest for testing. It has some basic starts other endpoints like films and starships.
+This repository is a React application that allows you to search profiles of Star Wars characters. It utilizes Next.js, MSW for mocking API requests, and Vitest for testing. It has some basic starts for other endpoints like films and starships.
 
 ## Getting Started
 
