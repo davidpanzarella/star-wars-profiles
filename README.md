@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Star Wars Profiles
+
+This repository is a React application that allows you to search profiles of Star Wars characters. It utilizes Next.js, MSW for mocking API requests, and Vitest for testing. It has some basic starts other endpoints like films and starships.
 
 ## Getting Started
 
@@ -14,23 +16,25 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000), search for a character, and see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To run the some basic tests, run the following command:
 
-## Learn More
+```bash
+npm run test or test:ui
+# or
+yarn test or test:ui
+# or
+pnpm test or test:ui
+# or
+bun test or test:ui
+```
 
-To learn more about Next.js, take a look at the following resources:
+## For additional information for scaling to a GraphQL API with AppSync and DynamoDB, check out the following:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- /graphql
+- /dynamodb
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+These wil outline the steps some basic models and scaffolding for a GraphQL API with AppSync and DynamoDB
