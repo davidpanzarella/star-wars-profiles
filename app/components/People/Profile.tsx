@@ -5,11 +5,11 @@ import ListComponent from "@/app/components/ListComponent"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 
-interface PersonComponentProps {
+interface ProfileProps {
   data: Person
 }
 
-const PersonComponent: React.FC<PersonComponentProps> = ({ data }) => {
+const Profile: React.FC<ProfileProps> = ({ data }) => {
   const {
     birth_year,
     eye_color,
@@ -33,11 +33,12 @@ const PersonComponent: React.FC<PersonComponentProps> = ({ data }) => {
         <Link
           className="flex flex-col items-center space-x-2"
           href={url}
+          role="link"
           target="_blank"
-          title={`View ${name} on SWAPI website.`}
+          title={`View ${name} on SWAPI website`}
         >
           <Image
-            alt="Character Avatar"
+            alt={`${name} Avatar`}
             className="rounded-full"
             height={160}
             src={`/images/people/${id}.jpg`}
@@ -54,8 +55,9 @@ const PersonComponent: React.FC<PersonComponentProps> = ({ data }) => {
         <div className="flex items-center space-x-4 mt-2 text-gray-500 dark:text-gray-400">
           <Link
             href={url}
+            role="link"
             target="_blank"
-            title={`View ${name} on SWAPI website.`}
+            title={`View ${name} on SWAPI website`}
           >
             View on SWAPI
           </Link>
@@ -135,4 +137,4 @@ const PersonComponent: React.FC<PersonComponentProps> = ({ data }) => {
   )
 }
 
-export default PersonComponent
+export default Profile

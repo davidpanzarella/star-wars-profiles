@@ -16,6 +16,7 @@ export interface Person {
 }
 
 export interface Film {
+  id: string
   title: string
   director: string
   release_date: string

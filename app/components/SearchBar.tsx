@@ -4,20 +4,20 @@ import { Button } from "@/app/components/ui/button"
 
 interface SearchBarProps {
   isSearching: boolean
+  onReset: () => void
   onSearch: (name: string) => void
-  onClear: () => void
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   isSearching,
   onSearch,
-  onClear,
+  onReset,
 }) => {
   const [query, setQuery] = useState("")
 
   const handleSearch = () => {
     if (query.trim() === "") {
-      onClear()
+      onReset()
     } else {
       onSearch(query)
     }
@@ -29,7 +29,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     }
     if (e.key === "Escape") {
       setQuery("")
-      onClear()
+      onReset()
     }
   }
 

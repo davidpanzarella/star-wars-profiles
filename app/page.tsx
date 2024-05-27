@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, Suspense } from "react"
+import React, { useState } from "react"
 import SearchBar from "@/app/components/SearchBar"
 import Profile from "@/app/components/People/Profile"
 import SkeletonLoader from "@/app/components/People/ProfileLoader"
@@ -29,32 +29,30 @@ const HomePage: React.FC = () => {
     }
   }
 
-  const handleClear = () => {
+  const handleReset = () => {
     setProfile(null)
     setError(null)
   }
 
   return (
-    <div>
+    <>
       <SearchBar
         isSearching={searching}
         onSearch={handleSearch}
-        onClear={handleClear}
+        onReset={handleReset}
       />
       {searching ? (
         <SkeletonLoader />
       ) : error ? (
-        <div className="text-red-500 text-center mt-4">{error}</div>
+        <div className="text-red-500 text-center mt-8">{error}</div>
       ) : profile ? (
-        <Suspense fallback={<SkeletonLoader />}>
-          <Profile data={profile} />
-        </Suspense>
+        <Profile data={profile} />
       ) : (
         <div className="text-gray-500 text-center mt-4">
           Please search for a character.
         </div>
       )}
-    </div>
+    </>
   )
 }
 
